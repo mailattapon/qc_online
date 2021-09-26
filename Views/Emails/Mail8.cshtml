@@ -1,0 +1,23 @@
+@model OutGoingData
+
+@{
+  Layout = null;
+  var detail = Model.Detail.Replace(Environment.NewLine, "<br />");
+}
+
+<h4>Inspection your data <span style="color: red;">Not Pass</span>,</h4>
+<p>
+  Please verify your data
+</p>
+<p>
+  <b>Title: </b>@Model.Title
+</p>
+<p>
+  <b>Detail: </b>@Html.Raw(detail)
+</p>
+<p>
+  <b>Invoice no: </b>@Model.Invoice
+</p>
+<p>
+  Thai Nippon Seiki Quality Online system.
+</p>

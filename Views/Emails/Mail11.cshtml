@@ -1,0 +1,25 @@
+@model OutGoingDatas_NewList
+
+
+@{
+    Layout = null;
+    //var detail = Model.Detail.Replace(Environment.NewLine, "<br />");
+}
+
+<p>
+    <b>To Supplier:</b> @Model.VendorName
+</p>
+<p>
+    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detail:</b> Rejected data NG
+<p>
+    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Part No:</b> @Model.PartNo
+</p>
+<p>
+    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delivery Date:</b> @Model.VdDocdt.Substring(6, 2)/@Model.VdDocdt.Substring(4,2)/@Model.VdDocdt.Substring(0,4)
+</p>
+<p>
+  <b>Please reply within 24 hrs.</b>
+</p>
+<p>
+    <b>Thai Nippon Seiki Quality Online system.</b>
+</p>

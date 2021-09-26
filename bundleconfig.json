@@ -1,0 +1,133 @@
+[
+  {
+    "outputFileName": "wwwroot/css/app.min.css",
+    "inputFiles": ["wwwroot/css/app.css"],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/app.min.js",
+    "inputFiles": ["wwwroot/js/app.js"],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/css/vendors.min.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/css/bootstrap.css",
+      "wwwroot/lib/font-awesome/css/all.css",
+      "wwwroot/lib/sweetalert/sweetalert.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/vendors.min.js",
+    "inputFiles": [
+      "wwwroot/lib/axios/axios.js",
+      "wwwroot/lib/vue/vue.js",
+      "wwwroot/lib/jquery/jquery.js",
+      "wwwroot/lib/sweetalert/sweetalert-dev.js",
+      "wwwroot/lib/popper/umd/popper.js",
+      "wwwroot/lib/bootstrap/js/bootstrap.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/supplier-evaluation.min.js",
+    "inputFiles": [
+      "wwwroot/js/constants.js",
+      "wwwroot/js/months.js",
+      "wwwroot/js/loader.js",
+      "wwwroot/js/admin-supplier-evaluation.js",
+      "wwwroot/js/vendor-supplier-evaluation.js",
+      "wwwroot/js/supplier-evaluation.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/self-controlled-ipp.min.js",
+    "inputFiles": [
+      "wwwroot/js/constants.js",
+      "wwwroot/js/months.js",
+      "wwwroot/js/self-controlled-ipp.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/download.min.js",
+    "inputFiles": [
+      "wwwroot/js/constants.js",
+      "wwwroot/js/ckeditor-config.js",
+      "wwwroot/js/download.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/tns-form.min.js",
+    "inputFiles": [
+      "wwwroot/js/constants.js",
+      "wwwroot/js/ckeditor-config.js",
+      "wwwroot/js/tns-form.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/supplier-information.min.js",
+    "inputFiles": [
+      "wwwroot/js/constants.js",
+      "wwwroot/js/ckeditor-config.js",
+      "wwwroot/js/supplier-information.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/out-going-data.min.js",
+    "inputFiles": [
+      "wwwroot/js/constants.js",
+      "wwwroot/js/loader.js",
+      "wwwroot/js/ckeditor-config.js",
+      "wwwroot/js/vendor-out-going-data.js",
+      "wwwroot/js/file-out-going-data.js",
+      "wwwroot/js/out-going-data.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

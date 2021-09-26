@@ -1,0 +1,127 @@
+@model QueryResultModel<TnsFormList>
+@inject FormatSetting Format
+
+@{
+  ViewBag.Title = "TNS Form";
+  var pagination = Model as IPaginationTagHelperData;
+}
+
+<div id="tns-form" class="card">
+  <div class="card-header">
+    <h4>TNS Form</h4>
+  </div>
+  <div class="card-body">
+    <div class="card mb-3">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-11 d-flex align-items-center">
+            <form asp-action="get" method="get" class="form-inline">
+              <div class="form-group">
+                <input type="text" readonly class="form-control-plaintext font-weight-bold" id="label" value="Keyword">
+              </div>
+              <div class="form-group mx-3">
+                <input type="text" value="@ViewBag.Keyword" style="width: 400px;" class="form-control" id="search" name="search" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+                <span class="ml-1">Search</span>
+              </button>
+            </form>
+          </div>
+          <div class="col-1 d-flex justify-content-end">
+            @if (User.IsInRole(Roles.ADMIN))
+            {
+              <tns-form></tns-form>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-bordered table-striped table-sm mb-0">
+          <thead class="text-center thead-dark">
+            <tr>
+              <th scope="col" class="title-col">Title</th>
+              <th scope="col" class="detail-col">Detail</th>
+              <th scope="col">File</th>
+              <th scope="col" class="size-col">Size</th>
+              <th scope="col" class="date-col">Last Update</th>
+              @if (User.IsInRole(Roles.ADMIN))
+              {
+                <th scope="col">Delete</th>
+              }
+            </tr>
+          </thead>
+          <tbody>
+            @if (Model.Items.Count > 0)
+            {
+              @foreach (var d in Model.Items)
+              {
+                <tr>
+                  <td class="align-middle text-left">@d.Title</td>
+                  <td class="align-middle text-left">
+                    <div
+                      data-toggle="tooltip" 
+                      data-html="true" 
+                      title="@d.Detail" 
+                      class="truncate-overflow">
+                      @Html.Raw(d.Detail)
+                    </div>
+                  </td>
+                  <td class="align-middle text-center">
+                    <a target="_blank" href="@d.FileName"><i class="fas fa-file text-dark"></i></a>
+                  </td>
+                  <td class="align-middle text-center">@FileUtility.SizeSuffix(d.FileSize)</td>
+                  <td class="align-middle text-center">@d.UpdatedAt.ToString(Format.ListDateFormat)</td>
+                  @if (User.IsInRole(Roles.ADMIN))
+                  {
+                    <td class="align-middle text-center">
+                      <form
+                        class="delete-form"
+                        asp-action="delete"
+                        asp-route-id="@d.Id" 
+                        method="post" 
+                      >
+                        <button type="submit" class="btn btn-link">
+                          <i class="fas fa-trash text-danger"></i>
+                        </button>
+                      </form>
+                    </td>
+                  }
+                </tr>
+              }
+            }
+            else
+            {
+              <partial name="_NotFoundTable" model="6"></partial>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+    @if (Model.TotalPage > 1)
+    {
+      <div class="row mt-3">
+        <div class="col-12 d-flex justify-content-end">
+          <div pagination="@pagination" class="btn-group"></div>
+        </div>
+      </div>
+    }    
+  </div>
+</div>
+
+@section Scripts {
+  <environment include="Development">
+    <script src="~/lib/ckeditor5-build-classic/build/ckeditor.js"></script>
+    <script src="~/lib/ckeditor5-vue/dist/ckeditor.js"></script>
+    <script src="~/js/constants.js"></script>
+    <script src="~/js/ckeditor-config.js"></script>
+    <script src="~/js/tns-form.js"></script>
+  </environment>
+  <environment exclude="Development">
+    <script src="~/lib/ckeditor5-build-classic/build/ckeditor.min.js"></script>
+    <script src="~/lib/ckeditor5-vue/dist/ckeditor.min.js"></script>
+    <script src="~/js/tns-form.min.js"></script>
+  </environment>
+}

@@ -1,0 +1,30 @@
+**/bin/
+**/obj/
+**/global.json
+**/*Dockerfile*
+**/.dockerignore*
+**/*.user
+dbdata/
+publish/
+
+# IDE
+.vscode/
+
+# Minify Assets
+wwwroot/js/*.min.js
+wwwroot/css/*.min.css
+
+#libman
+wwwroot/lib
+
+# uploaded files
+wwwroot/uploads/
+
+# MACOSX
+__MACOSX/
+
+# Let's Encrypt
+init-letsencrypt.sh
+
+# Docker Compose
+docker-compose.yml

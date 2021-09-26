@@ -1,0 +1,17 @@
+@model SupplierInformation
+
+@{
+  Layout = null;
+  var detail = Model.Detail.Replace(Environment.NewLine, "<br />");
+}
+
+<h4>Supplier information update,</h4>
+<p>
+  <b>Title: </b>@Model.Title
+</p>
+<p>
+  <b>Detail: </b>@Html.Raw(detail)
+</p>
+<p>
+  Thai Nippon Seiki Quality Online system.
+</p>

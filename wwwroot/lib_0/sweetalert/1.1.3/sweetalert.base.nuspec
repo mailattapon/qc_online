@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>SweetAlert.Base</id>
+        <version>1.1.3</version>
+        <title>SweetAlert</title>
+        <authors>Tristan Edwards</authors>
+        <owners>Mike Clarkson</owners>
+        <licenseUrl>https://github.com/t4t5/sweetalert/blob/master/LICENSE</licenseUrl>
+        <projectUrl>http://t4t5.github.io/sweetalert/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A library for Tristan Edwards (http://tristanedwards.me) SweetAlert JS Popup framework</description>
+        <language>en-US</language>
+        <tags>SweetAlert JavaScript</tags>
+    </metadata>
+</package>

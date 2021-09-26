@@ -1,0 +1,23 @@
+@model TnsForm
+
+@{
+  Layout = null;
+  var detail = Model.Detail.Replace (Environment.NewLine, "<br />");
+}
+
+<h4>New Form update,</h4>
+<p>
+  <b>Title: </b>@Model.Title
+</p>
+<p>
+  <b>Detail: </b>@Html.Raw(detail)
+</p>
+<p>
+  Please sign in for receive.
+</p>
+<p>
+  Must use last revision for submit data.
+</p>
+<p>
+  Thai Nippon Seiki Quality Online system.
+</p>

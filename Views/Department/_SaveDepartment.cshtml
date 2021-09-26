@@ -1,0 +1,39 @@
+@model DepartmentModel
+
+@{
+  var action = Model.Id > 0 ? "Edit" : "Create";
+}
+
+<div class="row">
+  <div class="col-6 offset-3">
+    <div class="card">
+      <div class="card-header">
+        <h4>@action Department</h4>
+      </div>
+      <div class="card-body">
+        <form method="post">
+          <div id="validation-summary" asp-validation-summary="All" class="alert alert-danger alert-dismissible" role="alert"></div>
+          <div class="form-group row">
+            <label asp-for="Name" class="col-2 col-form-label font-weight-bold"></label>
+            <div class="col-10">
+              <input asp-for="Name" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group row mb-0">
+            <div class="col-10 offset-2">
+              <a asp-action="get" class="btn btn-danger">
+                <i class="fas fa-window-close"></i>
+                <span class="ml-1">Cancel</span>
+              </a>
+              <button type="submit" class="btn btn-primary ml-2">
+                <i class="fas fa-save"></i>
+                <span class="ml-1">@action</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
