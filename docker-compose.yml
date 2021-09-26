@@ -1,14 +1,14 @@
 version: "3"
 services:
-  db:
-    restart: always
-    image: postgres:latest
-    ports:
-      - "5432:5432"
-    environment:
-      POSTGRES_PASSWORD: 8kWA2h!lWo7J
-    volumes:
-      - ../db:/var/lib/postgresql/data
+  # db:
+  #   restart: always
+  #   image: postgres:latest
+  #   ports:
+  #     - "5432:5432"
+  #   environment:
+  #     POSTGRES_PASSWORD: 8kWA2h!lWo7J
+  #   volumes:
+  #     - ../db:/var/lib/postgresql/data
   web:
     restart: always
     depends_on:
